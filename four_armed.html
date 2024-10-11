@@ -125,6 +125,34 @@ h6{
 }
 </style>
 <script>
+window.addEventListener('deviceorientation', function(event) {
+  var alpha = event.alpha;
+  var beta = event.beta;
+  var gamma = event.gamma;
+}, false);
+
+if(window.DeviceOrientationEvent) {
+    window.addEventListener('deviceorientation', function(event) {
+  //var a = document.getElementById('alpha',
+  //        b = document.getElementById('beta'),
+  //        g = document.getElementById('gamma'),
+  //        alpha = event.alpha,
+  //        beta = event.beta,
+  //            gamma = event.gamma;
+	if(gamma < 0){
+		turn_page_upper();
+	}else{
+		turn_page_down();
+	}
+  //a.innerHTML = Math.round(alpha);
+  //b.innerHTML = Math.round(beta);
+  //g.innerHTML = Math.round(gamma);
+
+    }, false);
+}else{
+    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
+
 // 如果按下按鍵事件時執行程序，電腦版中進行程序
 function isKeyPressed(event){
 
