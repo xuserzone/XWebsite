@@ -1,0 +1,1081 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>四臂觀音修持儀軌</title>
+<style>
+body{
+	margin: auto ;
+	background-color: "#0d0d0d;
+}
+
+.row{
+  display: table;
+  clear: both;
+  margin: auto;
+}
+
+.column0{
+	height: 450px;
+	margin: auto;
+	float: none;
+	width: 95%;
+	padding: 0px;
+	background-color: #fff5d9;
+	text-align: center;
+}
+
+.column00{
+	height: 200px;
+	width: 75%;
+	padding: 0px;
+	border: 5px double #000000;
+	text-align: center;
+	margin: auto;
+}
+
+.column1 {
+	height: 450px;
+	width: 5%;
+	padding: 10px;
+	background-color: #fff5d9;
+	border: 3px double #000000;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.column2 {
+	height: 450px;
+	width: 85%;
+	padding: 10px;
+	background-color: #fff5d9;
+	border: 3px double #000000;
+	vertical-align: middle;
+}
+
+.column3 {
+	height: 450px;
+	width: 5%;
+	padding: 10px;
+	background-color: #fff5d9;
+	border: 3px double #000000;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column1 {
+    width: 100%;
+  }
+}
+
+.simg1{
+	position: absolute;
+	height: 450 px;
+	width: 300px;
+	border: 1px solid #73AD21;
+	display: none;
+	bottom: 8px;
+	left: 40%;
+}
+
+.simg2{
+	position: absolute;
+	height: 450 px;
+	width: 300px;
+	border: 1px solid #73AD21;
+	display: none;
+	top: 8px;
+	left: 40%;
+}
+
+h1{
+	margin: 5px 5px 5px 5px;
+	font-size: 36px;
+}
+
+h2{
+	margin: 4px 4px 4px 4px;
+	font-size: 30px;
+}
+
+h3{
+	margin: 3px 3px 3px 3px;
+	text-shadow: 1px 1px 3px #8080ff;
+	font-size: 22px;
+	color: #000080;
+}
+
+h4{
+	margin: 2px 2px 2px 2px;
+	font-size: 16px;
+}
+
+h5{
+	margin: 1px 1px 1px 1px;
+	font-size: 12px;
+}
+
+h6{
+	margin: 0px 0px 0px 0px;
+	font-size: 10px;
+}
+</style>
+<script>
+// 如果按下按鍵事件時執行程序，電腦版中進行程序
+function isKeyPressed(event){
+
+	var now_page1 = document.all.main_form.page.value;
+	var now_page2 = document.all.main_form.page.value;
+	var next_page1 = document.all.main_form.page.value;
+	var next_page2 = document.all.main_form.page.value;
+	
+	//===============================================================
+	// 如果按下 Ctrl 鍵、向上、向左鍵時處理程序，【回上一頁】
+	// 可用按鍵【Ctrl】【↑】【←】
+	//===============================================================
+	if(event.keyCode == "17" || event.keyCode == "37" || event.keyCode =="38"){ 
+		turn_page_upper();
+	}
+
+	//===============================================================
+	// 如果按下 Space、向下、向右鍵時處理程序，【往下一頁】
+	// 可用按鍵【Space】【↓】【→】
+	//===============================================================
+	if(event.keyCode=="32" || event.keyCode == "39" || event.keyCode =="40") {
+		turn_page_down();
+	}
+
+	// 如果按下Home鍵時
+	if(event.keyCode == "36"){
+		now_page2 = Number(now_page1) + 1;
+		// 將目前頁面物件進行隱藏
+		document.getElementById("page_"+now_page1).style.display="none";
+		document.getElementById("page_"+now_page2).style.display="none";
+		document.getElementById("page_0").style.display="block";
+		// 設定表單page內定值
+		document.all.main_form.page.value="0";
+		document.getElementById("simg01").style.display="none";
+		document.getElementById("simg02").style.display="none";
+	}
+
+	// 如果按下 End 鍵時
+	if(event.keyCode == "35"){
+		now_page2 = Number(now_page1) + 1;
+		// 將目前頁面物件進行隱藏
+		document.getElementById("page_"+now_page1).style.display="none";
+		document.getElementById("page_"+now_page2).style.display="none";
+		document.getElementById("page_25").style.display="block";
+		document.getElementById("page_26").style.display="block";
+		// 設定表單page內定值
+		document.all.main_form.page.value="25";
+		document.getElementById("simg01").style.display="none";
+		document.getElementById("simg02").style.display="none";
+	}
+	
+	// 如果按下ESC鍵時
+	if(event.keyCode == "27") window.close();
+	
+}
+
+function isMouseWheel(event){
+	
+	var y = event.deltaY;
+
+	// 滾輪向前
+	if(y <= 0){
+		
+		turn_page_upper();
+		
+	// 滾輪向後
+	}else{
+		
+		turn_page_down();
+		
+	}
+}
+
+//===============================================================
+// 進行往上翻頁動作
+//===============================================================
+function turn_page_upper(){
+	
+	// 宣告變數
+	var now_page1 = document.all.main_form.page.value;
+	var now_page2 = document.all.main_form.page.value;
+	var next_page1 = document.all.main_form.page.value;
+	var next_page2 = document.all.main_form.page.value;
+	
+	// 如果page值為 0 時，已經是第一或封面頁，只進行封面頁
+	if(Number(now_page1) <= 1 ){
+		
+		// 第 0 頁設定為顯示
+		document.getElementById("page_0").style.display="block";
+		
+		// 第 1 頁及第 2 頁設定為隱藏
+		document.getElementById("page_1").style.display="none";
+		document.getElementById("page_2").style.display="none";
+		
+		// 為定表單page欄位內容為 0
+		document.all.main_form.page.value="0";
+		
+	// 如果page值大於 0 時，非處於第一頁，往前翻二頁
+	}else{
+		// 計算及設定第二頁變數(目前頁數再加一頁)
+		now_page2 = Number(now_page1) + 1;
+		// 計算及設定第三頁變數(目前頁數減二頁，往前翻二頁)
+		next_page1 = Number(now_page1)-2;
+		// 計算及設定第四頁變數(目前頁數減一頁，往前翻一頁)
+		next_page2 = Number(now_page1)-1;
+		
+		// 隱藏目前頁面，第 1 及第 2 頁
+		document.getElementById("page_" + now_page1).style.display="none";
+		document.getElementById("page_" + now_page2).style.display="none";
+		// 顯示下一個頁面，第 3 及第 4 頁
+		document.getElementById("page_" + next_page1).style.display="block";
+		document.getElementById("page_" + next_page2).style.display="block";
+		
+		// 設定表單page欄位內容 第 3 頁數值
+		document.all.main_form.page.value=next_page1;
+	}
+	
+	document.getElementById("simg01").style.display="none";
+	document.getElementById("simg02").style.display="none";
+}
+
+//===============================================================
+//進行往下翻頁動作
+//===============================================================
+function turn_page_down(){
+	
+	var now_page1 = document.all.main_form.page.value;
+	var now_page2 = document.all.main_form.page.value;
+	var next_page1 = document.all.main_form.page.value;
+	var next_page2 = document.all.main_form.page.value;
+	
+	// 如果page值為 23 時，已是最後一頁
+	if(Number(now_page1) >= 25){
+		
+		document.getElementById("page_25").style.display="block";
+		document.getElementById("page_26").style.display="block";
+		document.all.main_form.page.value = "25";
+		
+	// 如果page值不等於 24 ，非處於最後一頁
+	}else if(Number(now_page1) == 0){
+		
+		document.getElementById("page_0").style.display="none";
+		document.getElementById("page_1").style.display="block";
+		document.getElementById("page_2").style.display="block";
+
+		document.all.main_form.page.value = "1";
+
+	}else{
+		
+		now_page2 = Number(now_page1) + 1;
+		next_page1 = Number(now_page1) + 2;
+		next_page2 = Number(now_page1) + 3;
+		
+		// 將目前頁面物件進行隱藏
+		document.getElementById("page_"+now_page1).style.display="none";
+		document.getElementById("page_"+now_page2).style.display="none";
+		document.getElementById("page_"+next_page1).style.display="block";
+		document.getElementById("page_"+next_page2).style.display="block";
+		
+		document.all.main_form.page.value = next_page1;
+	}
+	
+	document.getElementById("simg01").style.display="none";
+	document.getElementById("simg02").style.display="none";
+}
+</script>
+</head>
+<body onkeydown="isKeyPressed(event)" onwheel="isMouseWheel(event);" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+<form action="" method="post" name="main_form">
+	<input type="hidden" name="page" value="0">
+</form>
+<!-- ********** 封面頁，第 00 頁 ********** -->
+<table width="100%" height="100%" style="background-color:#0D0D0D;">
+	<tr>
+		<td valign="middle" align="center">
+			<div class="row" id="page_0" style="display:block;">
+				<div class="column0" >
+					<table height="100%" width="100%"><tr><td valign="middle">
+						<div class="column00">
+							<font style="font-size:64px;">༄༅།།ཐུགས་རྗེ་ཆེན་པོའི་བསྒོམ་བཟླས་འགྲོ་དོན་མཁའ་ཁྱབ་མ་བཞུགས་སོ།།</font><br><br>
+							<font style="font-size:42px;">四臂觀音修持儀軌</font>
+						</div>
+					</td></tr></table>
+				</div>
+			</div>
+<!-- ********** 封面頁，第 01 頁 ********** -->
+			<div class="row" id="page_1" style="display:none;">
+				<table height="90%" width="100%" >
+					<tr>
+						<td>
+							<div class="column0">
+								<br><img src="./images/四臂觀音08.jpg" height="400px" style="vertical-valign:middle;">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 01 頁 ********** -->
+			<div class="row" id="page_2" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%" >
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5;"><h3>一、皈依發心&nbsp;&nbsp;<font style="font-size:28px;"> སྤྱན་རས་གཟིགས་བསྒོམ་བཟླས་ནི།  དང་པོ་སྐྱབས་སེམས། </font></h3></td>
+								</tr>
+								<tr>
+									<td align="center" valign="middle" width="33.33%" style="background-color:#fff5d9"><font style="font-size:42px">合　<img src="images/合掌02.jpg" style="height:90px;">　掌</font></td>
+									<td align="center" width="33.33%"><h2>སངས་རྒྱས་ཆོས་དང་ཚོགས་གྱི་མཆོག་རྣམས་ལ།</h2><h3>桑結 屈擋 綽皆 秋浪拉</h3><h4>諸佛正法資糧聖僧眾</h4></td>
+									<td align="center" width="33.33%"><h2>བྱང་ཆུབ་བར་དུ་བདག་ནི་སྐྱབས་སུ་མཆི།</h2><h3>強秋 巴都 達涅 迦森切</h3><h4>直至菩提證果我皈銥</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བདག་གིས་སྦྱིན་སོགས་བགྱིས་པའི་བསོད་ནམས་ཀྱིས།</h2><h3>達給 緊梭 吉貝 梭南級</h3><h4>我所為之布施等功德</h4></td>
+									<td align="center" width="33.33%"><h2>འགྲོ་ལ་ཕན་ཕྱིར་སངས་རྒྱས་འགྲུབ་པར་ཤོག།</h2><h3>卓拉 片切 桑皆 卓巴秀</h3><h4>為利眾生願成聖佛果</h4></td>
+									<td align="center" width="33.33%"><h2>&nbsp;</h2><h4>།ལན་གསུམ།</h4><h5>(以上重複唸誦三遍)</h5></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5"><h3>二、生起本尊&nbsp;&nbsp;<font style="font-size:28px;">ལྷ་བསྐྱེད་མནི།</font></h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བདག་སོགས་མཁའ་ཁྱབ་སེམས་ཅན་གྱི།</h2><h3>達梭 喀洽 森間 級</h3><h4>我等遍虛有情眾</h4></td>
+									<td align="center" width="33.33%"><h2>སྤྱི་གཙུག་པད་དཀར་ཟླ་བའི་སྟེང།</h2><h3>皆助 悲嘎 搭威 丁</h3><h4>頭頂白蓮月輪上</h4></td>
+									<td align="center" width="33.33%"><h2>ཧྲཱིཿལས་འཕགས་མཆོག་སྤྱན་རས་གཟིགས།</h2><h3>啥勒 帕卓 見烈 息</h3><h4>舍字幻化聖觀音</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>01</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 02 頁 ********** -->
+			<div class="row" id="page_3" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>དཀར་གསལ་འོད་ཟེར་ལྔ་ལྡན་འཕྲོ།</h2><h3>嘎薩 哦瑟 令丁 突</h3><h4>白亮明淨五彩光</h4></td>
+									<td align="center" width="33.33%"><h2>མཛེས་འཛུམ་ཐུགས་རྗེའི་སྤྱན་གྱིས་གཟིགས།</h2><h3>惹重 突傑 見及 息</h3><h4>莊嚴微笑悲眼視</h4></td>
+									<td align="center" width="33.33%"><h2>ཕྱག་བཞིའི་དང་པོ་ཐལ་སྦྱོར་མཛད།</h2><h3>佳些 當撥 盪窘 基</h3><h4>四臂首對為合掌</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འོག་གཉིས་ཤེལ་ཕྲེང་པད་དཀར་བསྣམས།</h2><h3>哦尼 謝天 悲嘎 南</h3><h4>後持晶珠及白蓮</h4></td>
+									<td align="center" width="33.33%"><h2>དར་དང་རིན་ཆེན་བརྒྱན་གྱིས་སྤྲས།</h2><h3>達當 仁千 見結 及</h3><h4>綢緞瓔珞珠寶飾</h4></td>
+									<td align="center" width="33.33%"><h2>རི་དྭགས་ལྤགས་པའི་སྟོད་གཡོགས་གསོལ།</h2><h3>惹達 爸悲 多幼 碩</h3><h4>上身披著鹿皮衣</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འོད་དཔག་མེད་པའི་དབུ་རྒྱན་ཅན།</h2><h3>歐巴 咩悲 歐間 見</h3><h4>無量光佛為頂嚴</h4></td>
+									<td align="center" width="33.33%"><h2>ཞབས་གཉིས་རྡོ་རྗེའི་སྐྱིལ་ཀྲུང་བཞུགས།</h2><h3>答捏 多結 皆宗 修</h3><h4>雙足金剛跏趺坐</h4></td>
+									<td align="center" width="33.33%"><h2>དྲི་མེད་ཟླ་བར་རྒྱབ་བརྟེན་པ།</h2><h3>吉咩 搭哇 佳惦 巴</h3><h4>背倚無垢滿月帷</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>02</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 03 頁 ********** -->
+			<div class="row" id="page_4" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>སྐྱབས་གནས་ཀུན་འདུས་ངོ་བོར་གྱུར།</h2><h3>佳捏 棍都 哦窩 糾</h3><h4>攝諸皈銥處自性</h4></td>
+									<td align="center" width="33.33%"><h2>&nbsp;</h2><h3>&nbsp;</h3><h4>&nbsp;</h4></td>
+									<td align="center" width="33.33%"><h2>&nbsp;</h2><h3>&nbsp;</h3><h4>&nbsp;</h4></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5"><h3>三、祈願文 &nbsp;&nbsp;&nbsp;&nbsp;བདག་དང་སེམས་ཅན་ཐམས་ཅད་ཀྱིས་མགྲིན་གཅིག་ཏུ་གསོལ་བ་འདེབས་པར་བསམས་ལ་ཞེས་ཅི་ནུས་སོགས།   (觀一切眾生與我合掌同聲唸誦下偈)</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%" style="background-color:#fff5d9"><h1>合　<img src="images/合掌02.jpg" style="height:90px;valign=middle;">　掌</h1></td>
+									<td align="center" width="33.33%"><h2>ཇོ་བོ་སྐྱོན་གྱོས་མ་གོས་སྐུ་མདོག་དཀར།</h2><h3>久窩 堅級 瑪姑 棍多 嘎</h3><h4>尊者無瑕白淨身</h4></td>
+									<td align="center" width="33.33%"><h2>རྫོགས་སངས་རྒུས་ཀྱིས་དབུ་ལ་བརྒྱན།</h2><h3>佐桑 堅結 哦拉 建</h3><h4>阿彌陀佛頂上嚴</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཐུགས་རྗེའི་སྤྱན་གྱིས་འགྲོ་ལ་གཟིགས།</h2><h3>突傑 見皆 卓拉 息</h3><h4>慈眼悲憫視眾生</h4></td>
+									<td align="center" width="33.33%"><h2>སྤུན་རས་གཟིགས་ལ་ཕྱག་འཚལ་ལོ།</h2><h3>見烈 息拉 洽札 洛</h3><h4>頂禮觀世音菩薩</h4></td>
+									<td align="center" width="33.33%"><h2>&nbsp;</h2><h4>།ལན་གསུམ།</h4><h5>(以上重複唸誦三遍)</h5></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>03</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 04 頁 ********** -->
+			<div class="row" id="page_5" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5"><h3>四、七支佛世偈&nbsp;&nbsp;<font style="font-size:28px;"> ཡན་ལག་བདུན་པ་ནི།</font></h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འཕགས་པ་སྤྱན་རས་གཟིགས་དབང་དང།</h2><h3>帕巴 見烈 息汪 當</h3><h4>制勝觀音大士與</h4></td>
+									<td align="center" width="33.33%"><h2>ཕྱོགས་བཅུ་དུས་གསུམ་བཞུགས་པ་ཡི།</h2><h3>丘傑 獨孫 修巴 宜</h3><h4>十方三世所安住</h4></td>
+									<td align="center" width="33.33%"><h2>རྒྱལ་བ་སྲས་བཅས་ཐམས་ཅད་ལ།</h2><h3>嘉哇 誰皆 滂皆 拉</h3><h4>所有諸佛及菩薩</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཀུན་ནས་དང་བས་ཕྱག་འཚལ་ལོ།</h2><h3>棍捏 當威 洽札 洛</h3><h4>一切誠信而頂禮</h4></td>
+									<td align="center" width="33.33%"><h2>མེ་ཏོག་བདུག་སྤོས་མར་མེ་དྲི།</h2><h3>美舵 堵波 瑪媚 皆</h3><h4>花香油燈與塗香</h4></td>
+									<td align="center" width="33.33%"><h2>ཞལ་ཟས་རོལ་མོ་ལ་སོགས་པ།</h2><h3>暇些 洛莫 拉碩 巴</h3><h4>妙食以及伎樂等</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>དངོས་འབྱོར་ཡིད་ཀྱིས་སྤྲུལ་ནས་འབུལ།</h2><h3>昆久 宜傑 諸捏 補</h3><h4>實設意緣所供養</h4></td>
+									<td align="center" width="33.33%"><h2>འཕགས་པའི་ཚོགས་ཀྱིས་བཞེས་སུ་གསོལ།</h2><h3>帕悲 措皆 歇梭 梭</h3><h4>祈諸聖眾皆納受</h4></td>
+									<td align="center" width="33.33%"><h2>ཐོག་མ་མེད་ནས་ད་ལྟའི་བར།</h2><h3>託罵 咩捏 打得 巴</h3><h4>無始以來直至今</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>04</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 05 頁 ********** -->
+			<div class="row" id="page_6" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>མི་དགེ་བཅུ་དང་མཚམས་མེད་ལྔ།</h2><h3>咩給 居擋 札咩 阿</h3><h4>十不善與五無間</h4></td>
+									<td align="center" width="33.33%"><h2>སེམས་ནི་ཉོན་མོངས་དབང་གྱུར་པའི།</h2><h3>先捏 紐莫 汪皆 悲</h3><h4>煩惱心力所使然</h4></td>
+									<td align="center" width="33.33%"><h2>སྡིག་པ་ཐམས་ཅད་བཤགས་པར་བགྱི།</h2><h3>迪巴 湯皆 夏巴 皆</h3><h4>一切罪業皆懺悔</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཉན་ཐོས་རང་རྒྱལ་བྱང་ཆུབ་སེམས།</h2><h3>捏度 浪佳 強丘 森</h3><h4>聲聞緣覺菩薩眾</h4></td>
+									<td align="center" width="33.33%"><h2>སོ་སོ་སྐྱོ་བོ་ལ་སོགས་པས།</h2><h3>梭梭 介臥 拉梭 悲</h3><h4>以及一切凡夫等</h4></td>
+									<td align="center" width="33.33%"><h2>དུས་གསུམ་དགེ་བ་ཅི་བསགས་པའི།</h2><h3>睹宋 給哇 計薩 悲</h3><h4>三世所積諸善業</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བསོད་ནམས་ལ་ནི་བདག་ཡི་རང།</h2><h3>梭南 拉捏 達宜 浪</h3><h4>一切功德我隨喜</h4></td>
+									<td align="center" width="33.33%"><h2>སེམས་ཅན་རྣམས་ཀྱི་བསམ་པ་དང།</h2><h3>森間 南傑 桑巴 當</h3><h4>眾生思想和心智</h4></td>
+									<td align="center" width="33.33%"><h2>བློ་ཡི་བྱེ་བྲག་ཇི་ལྟ་བར།</h2><h3>洛耶 皆札 皆大 哇</h3><h4>隨其差別而有之</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>05</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 06 頁 ********** -->
+			<div class="row" id="page_7" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>ཆེ་ཆུང་ཐུན་མོང་ཐེག་པ་ཡི།</h2><h3>妾穹 吞萌 帖爸 夷</h3><h4>小乘大乘與共乘</h4></td>
+									<td align="center" width="33.33%"><h2>ཆོས་ཀྱི་འཁོར་ལོ་བསྐོར་དུ་གསོལ།</h2><h3>屈傑 括洛 郭獨 索</h3><h4>我今祈請轉法輪</h4></td>
+									<td align="center" width="33.33%"><h2>འཁོར་བ་ཇི་སྲིད་མ་སྟོངས་པར།</h2><h3>括哇 皆些 瑪東 巴</h3><h4>乃至輪迴不空時</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>མྱ་ངན་མི་འདའ་ཐུགས་རྗེ་ཡིས།</h2><h3>釀恩 咩搭 突傑 夷</h3><h4>請以慈悲莫示寂</h4></td>
+									<td align="center" width="33.33%"><h2>སྡུག་བསྔལ་རྒྱ་མཚོར་བྱིང་བ་ཡི།</h2><h3>頓阿 佳措 吟哇 宜</h3><h4>沉溺痛苦大海中</h4></td>
+									<td align="center" width="33.33%"><h2>སེམས་ཅན་རྣམས་ལ་གཟིགས་སུ་གསོལ།</h2><h3>森間 南拉 些速 索</h3><h4>凡諸有情祈垂顧</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བདག་གིས་བསོད་ནམས་ཅི་བསགས་པ།</h2><h3>達給 梭南 基薩 巴</h3><h4>以我所集諸功德</h4></td>
+									<td align="center" width="33.33%"><h2>ཐམས་ཅད་བྱང་ཆུབ་རྒྱུར་གྱུར་ནས།</h2><h3>湯傑 將久 糾糾 捏</h3><h4>一切皆成菩提因</h4></td>
+									<td align="center" width="33.33%"><h2>རིང་པོར་མི་ཐོགས་འགྲོ་བ་ཡི།</h2><h3>忍播 咩拓 卓哇 夷</h3><h4>願我無需長時期</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>06</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 07 頁 ********** -->
+			<div class="row" id="page_8" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>འདྲེན་པའི་དཔལ་དུ་བདག་གྱུར་ཅིག།</h2><h3>堅悲 巴獨 搭糾 傑</h3><h4>即成度眾之權威</h4></td>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5"><h3>五、觀音祈請文　གསོལ་འདེབས།</h3></td>
+								</tr>
+								<tr>
+									<td align="center" valign="middle" width="33.33%" style="background-color:#fff5d9"><font style="font-size:42px">合　<img src="images/合掌02.jpg" style="height:90px;">　掌</font></td>
+									<td align="center" width="33.33%"><h2>གསོལ་བ་འདེབས་སོ་བླ་མ་སྤྱན་རས་གཟིགས།</h2><h3>索哇 得索 喇嘛 見烈 息</h3><h4>祈求制勝上師觀世音</h4></td>
+									<td align="center" width="33.33%"><h2>གསོལ་བ་འདེབས་སོ་ཡི་དམ་སྤྱན་རས་གཟིགས།</h2><h3>索哇 得索 夷擋 見烈 息</h3><h4>祈求制勝本尊觀世音</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>གསོལ་བ་འདེབས་སོ་འཕགས་མཆོག་སྤྱན་རས་གཟིགས།</h2><h3>索哇 得索 潘佐 見烈 息</h3><h4>祈求制勝經者觀世音</h4></td>
+									<td align="center" width="33.33%"><h2>གསོལ་བ་འདེབས་སོ་སྐྱབས་མགོན་སྤྱན་རས་གཟིགས།</h2><h3>索哇 得索 姜棍 見烈 息</h3><h4>祈求制勝依怙觀世音</h4></td>
+									<td align="center" width="33.33%"><h2>གསོལ་བ་འདེབས་སོ་བྱམས་མགོན་སྤྱན་རས་གཟིགས།</h2><h3>索哇 得索 強坤 見烈 息</h3><h4>祈求制勝大悲觀世音</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>07</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 08 頁 ********** -->
+			<div class="row" id="page_9" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>ཐགས་རྗེས་བཟུངས་ཤིག་རྒྱལ་བཐུགས་རྗེ་ཅན།</h2><h3>突傑 訟西 嘉哇 突傑 見</h3><h4>如佛慈悲一般顧有情</h4></td>
+									<td align="center" width="33.33%"><h2>མཐའ་མེད་འཁོར་བ་གྲངས་མེད་འཁྱམས་གྱུར་ཅིང།</h2><h3>踏咩 括哇 掌咩 將糾 經</h3><h4>徘徊無盡如海輪迴中</h4></td>
+									<td align="center" width="33.33%"><h2>བཟོད་མེད་སྡུག་བསྔལ་མྱོང་བའི་འགྲོ་བ་ལ།</h2><h3>梭咩 頓阿 扭威 卓哇 拉</h3><h4>眾生歷盡無邊難忍苦</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>མགོན་པོ་ཁྱེད་ལས་སྐྱབས་གཞན་མ་མཆིས་སོ།</h2><h3>貢撥 傑烈 架閒 瑪契 索</h3><h4>依怙本尊觀音無疑誤</h4></td>
+									<td align="center" width="33.33%"><h2>རྣམ་མཁྱེན་སངས་རྒྱས་ཐོབ་པར་བྱིན་བྱིས་རློབས།</h2><h3>南千 桑皆 託巴 見級 洛</h3><h4>加持而能成就遍智佛</h4></td>
+									<td align="center" width="33.33%"><h2>ཐོག་མེད་དུས་ནས་ལས་ངན་བསགས་པའི་མཐུས།</h2><h3>拓咩 篤捏 烈恩 薩悲 杜</h3><h4>無始所集諸多眾惡業</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཞེ་སྡང་དབང་གིས་དམྱལ་བར་སྐྱེས་གྱུར་ཏེ།</h2><h3>昔當 汪格 娘哇 皆糾 得</h3><h4>嗔怒罣礙導致地獄生</h4></td>
+									<td align="center" width="33.33%"><h2>ཚ་གྲང་སྡུག་བསྔལ་མྱོང་བའི་སེམས་ཅན་རྣམས།</h2><h3>岔掌 頓阿 扭威 森見 南</h3><h4>經歷無盡寒熱苦有情</h4></td>
+									<td align="center" width="33.33%"><h2>ལྷ་མཆོག་ཁྱེད་ཀྱི་དྲུང་དུ་སྐྱེ་བར་ཤོག།</h2><h3>臘佐 切皆 種獨 介哇 秀</h3><h4>願能生至本尊蓮座前</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>08</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 09 頁 ********** -->
+			<div class="row" id="page_10" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h1>ༀ་མ་ཎི་པདྨེ་ཧཱུྃ།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+									<td align="center" width="33.33%"><h2>ཐོག་མེད་དུས་ནས་ལས་ངན་བསགས་པའི་མཐུས།</h2><h3>拓咩 篤捏 烈恩 薩悲 突</h3><h4>無始所集眾多諸惡業</h4></td>
+									<td align="center" width="33.33%"><h2>སེར་སྣའི་དབང་གིས་ཡི་དྭགས་གནས་སུ་སྐྱེས།</h2><h3>些捏 汪給 夷搭 捏速 皆</h3><h4>吝嗇貪心導致餓鬼趣</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བསྐྲེས་སྐོམ་སྡུག་བསྔལ་མྱོང་བའི་སེམས་ཅན་རྣམས།</h2><h3>皆貢 頓阿 扭威 森見 南</h3><h4>經歷無盡饑渴苦有情</h4></td>
+									<td align="center" width="33.33%"><h2>ཞིང་མཆོག་པོ་ཏཱ་ལ་རུ་སྐྱེ་བར་ཤོག།</h2><h3>形丘 撥大 拉汝 皆哇 秀</h3><h4>願能生至普陀拉勝土</h4></td>
+									<td align="center" width="33.33%"><h1>ༀ་མ་ཎི་པདྨེ་ཧཱུྃ།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཐོག་མེད་དུས་ནས་ལས་ངན་བསགས་པའི་མཐུས།</h2><h3>拓咩 篤捏 烈恩 薩悲 突</h3><h4>無始所集眾多諸惡業</h4></td>
+									<td align="center" width="33.33%"><h2>གཏི་མུག་དབང་གིས་དུད་འགྲོར་སྐྱེས་གྱུར་ཏེ།</h2><h3>爹莫 汪給 頓多 皆糾 得</h3><h4>愚昧笨痴導致畜生趣</h4></td>
+									<td align="center" width="33.33%"><h2>གླེན་ལྐུག་སྡུག་བསྔལ་མྱོང་བའི་སེམས་ཅན་རྣམས།</h2><h3>憐棍 頓阿 扭威 森見 南</h3><h4>經歷無盡暗啞苦有情</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>09</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 10 頁 ********** -->
+			<div class="row" id="page_11" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>མགོན་པོ་ཁྱེད་ཀྱི་དྲུང་དུ་སྐྱེ་བར་ཤོག།</h2><h3>宮播 切皆 種篤 介哇 秀</h3><h4>願能生至依怙尊座前</h4></td>
+									<td align="center" width="33.33%"><h1>ༀ་མ་ཎི་པདྨེ་ཧཱུྃ།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+									<td align="center" width="33.33%"><h2>ཐོག་མེད་དུས་ནས་ལས་ངན་བསགས་པའི་མཐུས།</h2><h3>拓咩 篤捏 烈恩 薩悲 突</h3><h4>無始所集眾多諸惡業</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འདོད་ཆགས་དབང་གིས་མི་ཡི་གནས་སུ་སྐྱེས།</h2><h3>勒洽 汪給 密以 捏速 皆</h3><h4>貪愛慾望導致人道生</h4></td>
+									<td align="center" width="33.33%"><h2>བྲེལ་ཕོངས་སྡུག་བསྔལ་མྱོང་བའི་སེམས་ཅན་རྣམས།</h2><h3>皆澎 頓阿 扭威 森見 南</h3><h4>經歷無盡貧窮苦有情</h4></td>
+									<td align="center" width="33.33%"><h2>ཞིང་མཆོག་བདེ་བ་ཅན་དུ་སྐྱེ་བར་ཤོག།</h2><h3>形丘 喋哇 見獨 介哇 秀</h3><h4>願能生至極樂之淨土</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h1>ༀ་མ་ཎི་པདྨེ་ཧཱུྃ།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+									<td align="center" width="33.33%"><h2>ཐོག་མེད་དུས་ནས་ལས་ངན་བསགས་པའི་མཐུས།</h2><h3>拓咩 篤捏 烈恩 薩悲 多</h3><h4>無始所集眾多諸惡業</h4></td>
+									<td align="center" width="33.33%"><h2>ཕྲག་དོག་དབང་གིས་ལྷ་མིན་གནས་སུསྐྱེས།</h2><h3>岔奪 汪給 臘咩 捏蘇 皆</h3><h4>嫉妒嗔心導致修羅趣</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>10</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 11 頁 ********** -->
+			<div class="row" id="page_12" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>འཐབ་རྩོད་སྡུག་བསྔལ་མྱོང་བའི་སེམས་ཅན་རྣམས།</h2><h3>踏皆 頓阿 扭威 森見 南</h3><h4>歷經無盡爭鬥苦有情</h4></td>
+									<td align="center" width="33.33%"><h2>པོ་ཏཱ་ལ་ཡི་ཞིང་དུ་སྐྱེ་བར་ཤོག།</h2><h3>撥大 拉以 形睹 介哇 秀</h3><h4>願能生至普陀拉淨土</h4></td>
+									<td align="center" width="33.33%"><h1>ༀ་མ་ཎི་པདྨེ་ཧཱུྃ།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཐོག་མེད་དུས་ནས་ལས་ངན་བསགས་པའི་མཐུས།</h2><h3>拓咩 篤捏 烈恩 薩悲 多</h3><h4>無始所集眾多諸惡業</h4></td>
+									<td align="center" width="33.33%"><h2>ང་རྒྱལ་དབང་གིས་ལྷ་ཡི་གནས་སུ་སྐྱེས།</h2><h3>阿佳 汪給 臘耶 捏速 傑</h3><h4>驕傲我慢導致天道生</h4></td>
+									<td align="center" width="33.33%"><h2>འཕོ་ལྟུང་སྡུག་བསྔལམྱོང་བའི་སེམས་ཅན་རྣམས།</h2><h3>迫東 頓阿 扭威 森見 南</h3><h4>歷經無盡變易苦有情</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཕོ་ཏཱ་ལ་ཡི་ཞིང་དུ་སྐྱེ་བར་ཤོག།</h2><h3>播大 拉以 形睹 介哇 秀</h3><h4>願能生至普陀拉淨土</h4></td>
+									<td align="center" width="33.33%"><h1>ༀ་མ་ཎི་པདྨེ་ཧཱུྃ།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+									<td align="center" width="33.33%"><h2>བདག་ནི་སྐྱེ་ཞིང་སྐྱེ་བ་ཐམས་ཅད་དུ།</h2><h3>達尼 借形 借哇 湯傑 獨</h3><h4>我當願能生生與世世</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>11</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 12 頁 ********** -->
+			<div class="row" id="page_13" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>སྤྱན་རས་གཟིགས་དང་མཛད་པ་མཚུངས་པར་ཡིས།</h2><h3>見烈 息擋 皆爸 穹爸 宜</h3><h4>所為皆能都與觀音同</h4></td>
+									<td align="center" width="33.33%"><h2>མ་དག་ཞིང་གི་འགྲོ་རྣམས་སྒྲོལ་བ་དང།</h2><h3>罵達 形給 卓南 卓哇 當</h3><h4>濁世眾生皆得渡脫離</h4></td>
+									<td align="center" width="33.33%"><h2>གསུང་མཆོག་ཡིག་དྲུག་ཕྱོགས་བཅུར་རྒྱས་པར་ཤོག།</h2><h3>宋秋 夷杜 究久 皆巴 秀</h3><h4>六字明咒皆遍十方廣</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འཕགས་མཆོག་ཁྱེད་ལ་གསོལ་བ་འདེབས་པའི་མཐུས།</h2><h3>帕秋 皆拉 梭哇 喋悲 突</h3><h4>因我虔誠祈求至尊力</h4></td>
+									<td align="center" width="33.33%"><h2>བདག་གི་གདུལ་བྱར་གྱུར་པའི་འགྲོ་བ་རྣམས།</h2><h3>達給 堵將 糾威 卓哇 南</h3><h4>我所調伏眾多有情生</h4></td>
+									<td align="center" width="33.33%"><h2>ལས་འབྲས་ལྷུར་ལེན་དགེ་བའི་ལས་ལ་བ་རྩོན།</h2><h3>連惦 鹿憐 給威 雷拉 尊</h3><h4>承擔因緣果報勤修善</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འགྲོ་བའི་དོན་དུ་ཆོས་དང་ལྡན་པར་ཤོག།</h2><h3>卓威 短督 屈擋 惦爸 秀</h3><h4>願能具備佛法以利生</h4></td>
+									<td align="center" width="33.33%" style="background-color:#ffebb5;"><h2>དེ་ལྟར་རྩེ་གཅིག་གསོལ་བཏབ་པས།</h2><h3>得大 賊皆 碩大 悲</h3><h4>因我所有虔誠祈求力</h4></td>
+									<td align="center" width="33.33%"><h2>འཕགས་པའི་སྐུ་ལས་འོད་ཟེར་འཕྲོས།</h2><h3>帕悲 故雷 歐色 突</h3><h4>聖者法身放出大光明</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>12</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 13 頁 ********** -->
+			<div class="row" id="page_14" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>མ་དག་ལས་སྣང་འཁྲུལ་ཤེས་སྦྱངས།</h2><h3>罵達 列南 觸西 將</h3><h4>清淨諸多惡業及煩惱</h4></td>
+									<td align="center" width="33.33%"><h2>ཕྱི་སྣོད་བདེ་བ་ཅན་གྱི་ཞིང།</h2><h3>千捏 得哇 見結 形</h3><h4>娑婆世界頓成妙淨土</h4></td>
+									<td align="center" width="33.33%"><h2>ནང་བཅུད་སྐྱེ་འགྲོའི་ལུས་ངག་སེམས།</h2><h3>南究 見多 輪阿 森</h3><h4>諸多有情眾生身口意</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>སྤྱན་རས་གཟིགས་དབང་སྐུ་གསུང་ཐུགས།</h2><h3>見烈 息汪 固訟 突</h3><h4>悉成觀音菩薩身口意</h4></td>
+									<td align="center" width="33.33%"><h2>སྣང་གྲགས་རིག་སྟོང་དབྱེར་མེད་གྱུར།</h2><h3>南札 惹東 悅咩 糾</h3><h4>現象、音聲及世智 悉與空性合如一</h4></td>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+									<td align="center" width="33.33%" style="background-color:#ffebb5;"><h1>༄༅།། ༀ་མ་ཎི་པདྨེ་ཧཱུྃ །།</h1><h3>嗡 瑪 尼 悲 咩 吽</h3></td>
+									<td align="center" width="33.33%"><h5>(108遍或更多)</h5></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>13</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 14 頁 ********** -->
+			<div class="row" id="page_15" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>བདག་གཞན་ལུས་སྣང་འཕགས་པའི་སྐུ།</h2><h3>達閒 如南 帕悲 固</h3><h4>自他皆化聖者身</h4></td>
+									<td align="center" width="33.33%"><h2>སྒྲ་གྲགས་ཡི་གེ་དྲུག་པའི་དབྱངས།</h2><h3>扎扎 耶給 竹悲 陽</h3><h4>聲音皆成六字明</h4></td>
+									<td align="center" width="33.33%"><h2>དྲན་རྟོགས་ཡེ་ཤེས་ཆེན་པོའི་ཀློང།</h2><h3>堅舵 也希 千波弄</h3><h4>心念轉為大智慧</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>དགེ་བ་འདི་ཡིས་མྱུར་དུ་བདག།</h2><h3>給哇 得也 紐讀達</h3><h4>願我迅速以此善</h4></td>
+									<td align="center" width="33.33%"><h2>སྤྱན་རས་གཟིགས་དབང་འགྲུབ་གྱུར་ནས།</h2><h3>見烈 息汪 諸糾捏</h3><h4>成就觀音大士尊</h4></td>
+									<td align="center" width="33.33%"><h2>འགྲོ་བ་གཅིག་ཀྱང་མ་ལུས་པ།</h2><h3>卓哇 記將 罵露巴</h3><h4>一切眾生盡無餘</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>དེ་ཡི་ས་ལ་འགོད་པར་ཤོག།</h2><h3>得也 薩拉 姑巴 秀</h3><h4>悉皆安置彼佛地</h4></td>
+									<td align="center" width="33.33%"><h2>འདི་ལྟར་སྒོམ་བཟླས་བགྱིས་པའི་བསོད་ནམས་ཀྱིས།</h2><h3>得大 宮得 吉悲 梭南 傑</h3><h4>觀想念誦功德力</h4></td>
+									<td align="center" width="33.33%"><h2>བདག་དང་བདག་ལ་འབྲེལ་ཐོགས་འགྲོ་བ་ཀུན།</h2><h3>達當 達拉 惦舵 卓哇 固</h3><h4>願與有緣諸親友</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>14</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 15 頁 ********** -->
+			<div class="row" id="page_16" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>མི་གཙང་ལུས་འདི་བོར་བ་གྱུར་མ་ཐག།</h2><h3>密藏 露得 玻露哇 糾罵 達</h3><h4>命終捨此不淨身</h4></td>
+									<td align="center" width="33.33%"><h2>བདེ་བ་ཅན་དུ་བརྫུས་ཏེ་སྐྱེ་བར་ཤོག།</h2><h3>得哇 建督 諸得 介哇 秀</h3><h4>剎那化生極樂國</h4></td>
+									<td align="center" width="33.33%"><h2>སྐྱེ་མ་ཐག་ཏུ་ས་བཅུ་རབ་བསྒྲོད་ནས།</h2><h3>介瑪 答度 薩傑 喇堵 捏</h3><h4>生已即刻登十地</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>སྤྲུལ་པས་ཕྱོགས་བཅུར་གཞན་དོན་བྱེད་པར་ཤོག།</h2><h3>助悲 究久 閒頓 傑巴 秀</h3><h4>願以化身利十方</h4></td>
+									<td align="center" width="33.33%"><h2>དགེ་བ་འདི་ཡི་སྐྱེ་བོ་ཀུན།</h2><h3>給哇 得也 介哦 棍</h3><h4>願以此善令眾生</h4></td>
+									<td align="center" width="33.33%"><h2>བསོད་ནམས་ཡེ་ཤེས་ཆོགས་རྫོགས་ཏེ།</h2><h3>梭南 也希 綽左 得</h3><h4>圓滿福慧二資糧</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བསོད་ནམས་ཡེ་ཤེས་ལས་འབྱུང་བའི།</h2><h3>梭南 也希 烈窘 威</h3><h4>功德智慧所由生</h4></td>
+									<td align="center" width="33.33%"><h2>དམ་པ་སྐུ་གཉིས་ཐོབ་པར་ཤོག།</h2><h3>檔巴 固捏 拓巴 秀</h3><h4>願得勝妙之二身</h4></td>
+									<td align="center" width="33.33%"><h2>བྱང་ཆུབ་སེམས་ནི་རིན་པོ་ཆེ།</h2><h3>賞丘 森捏 仁波 切</h3><h4>菩提心之摩尼寶</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>15</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 16 頁 ********** -->
+			<div class="row" id="page_17" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>མ་སྐྱེས་པ་རྣམས་སྐྱེས་གྱུར་ཅིག།</h2><h3>瑪介 巴南 介糾 傑</h3><h4>尚未生者願生長</h4></td>
+									<td align="center" width="33.33%"><h2>སྐྱེས་པ་ཉམས་པ་མེད་པ་དང།</h2><h3>介巴 娘巴 咩巴 擋</h3><h4>但已生者勿退轉</h4></td>
+									<td align="center" width="33.33%"><h2>གོང་ནས་གོང་དུ་འཕེལ་བར་ཤོག།</h2><h3>拱捏 拱睹 得哇 秀</h3><h4>輾轉綿延增至上</h4></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5"><h3>六、咒語</h3></td>
+								</tr>
+								<tr>
+									<td width="33.33%"><h3>嗡阿吽　班札咕嚕貝瑪悉地吽</h3></td>
+									<td width="33.33%"><h2>༄༅།། ༀ་ཨཱཿཧཱུྃ་བཛྲ་གུ་རུ་པངྨ་སིདྡྷེ་ཧཱུྃ༔ །།</h2></td>
+									<td width="33.33%" onclick="document.getElementById('simg02').style.display='none';document.getElementById('simg01').style.display='block';document.getElementById('simg001').src='./images/蓮花生大士00.jpg';"><h3>蓮花生大師咒 གུརུ</h3></td>
+								</tr>
+								<tr>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h3>嗡　阿咪爹哇啥</h3></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h2>༄༅།།ཨོཾ་ཨཱཿ་མི་དྷེ་ཝ་ཧྲཱིཿ །།  ཧྲཱི༔</h2></td>
+									<td width="33.33%" style="background-color:#f8ffd9;" onclick="document.getElementById('simg02').style.display='none';document.getElementById('simg01').style.display='block';document.getElementById('simg001').src='./images/阿彌陀佛01.jpg';"><h3>阿彌陀佛心咒 འོད་དཔག་མེད</h3></td>
+								</tr>
+								<tr>
+									<td width="33.33%"><h3>嗡　阿拉巴札那滴</h3></td>
+									<td width="33.33%"><h2>༄༅།།ཨོཾ་ཨ་ར་པ་ཙ་ནཱ །།  ངྷཱི༔</h2></td>
+									<td width="33.33%"  onclick="document.getElementById('simg02').style.display='none';document.getElementById('simg01').style.display='block';document.getElementById('simg001').src='./images/文殊菩薩01.jpg';"><h3>文殊菩薩心咒 འཇཾ་དབྱངས</h3></td>
+								</tr>
+								<tr>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h3>嗡　搭咧度搭咧度咧梭哈</h3></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h2>༄༅།།ཨོཾ་ཏཱ་རེ་ཏུ་ཏྟཱ་རེ་ཏུ་རེ་སྭཱ་ཧཱ །།  ཏཱྃ༔</h2></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"  onclick="document.getElementById('simg02').style.display='none';document.getElementById('simg01').style.display='block';document.getElementById('simg001').src='./images/綠度母03.jpg';"><h3>綠度母心咒 སྒྲོལ་མ</h3></td>
+								</tr>
+								<tr>
+									<td width="33.33%"><h3>嗡　阿瑪拉涅折紋搭耶梭哈</h3></td>
+									<td width="33.33%"><h2>༄༅།། ཨོཾ་ཨ་མ་ར་ཎི་ཛི་བན་ཏི་ཡེ་སྭཱ་ཧཱ །།</h2></td>
+									<td width="33.33%"  onclick="document.getElementById('simg02').style.display='none';document.getElementById('simg01').style.display='block';document.getElementById('simg001').src='./images/長夀佛02.jpg';"><h3>長壽佛咒 ཆོ་དཔག་མེད</h3></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>16</h1></td>
+					</tr>
+				</table>
+			</div>
+			<div class="simg1" id="simg01"  onclick="document.getElementById('simg01').style.display='none';">
+				<img id="simg001" src="" height="450" width="300">
+			</div>
+			<div class="simg2" id="simg02"  onclick="document.getElementById('simg02').style.display='none';">
+				<img id="simg002" src="" height="450" width="300">
+			</div>
+<!-- ********** 封面頁，第 17 頁 ********** -->
+			<div class="row" id="page_18" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h3>嗡　沾巴拉渣涅搭耶梭哈</h3></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h2>༄༅།།ཨོཾ་ཛ་མྦྷ་ལཱ་ཛ་ལེ་ནྡྲ་ཡེ་སྭཱ་ཧཱ༔།།  ཛཾ</h2></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"  onclick="document.getElementById('simg01').style.display='none';document.getElementById('simg02').style.display='block';document.getElementById('simg002').src='./images/黃財神09.jpg';"><h3>黃財神佛心咒 ཛཾ་ལྷ</h3></td>
+								</tr>
+								<tr>
+									<td colspan="2"><h3>嗡　班札拉　那拉丁丁　吽吽　呸呸　嗡　班札拉　瑪哈嘎拉　親親札　邊嘎內　悲那亞尬　吽吽　呸呸　
+						咕嚕　瑪哈嘎拉　哈烈尼撒西滴札　阿優　不尼亞　答嘛　佈丁　咕嚕　梭哈</h3></td>
+									<td  onclick="document.getElementById('simg01').style.display='none';document.getElementById('simg02').style.display='block';document.getElementById('simg002').src='./images/白瑪哈嘎拉00.jpg';"><h3>白瑪哈嘎喇咒&nbsp;མགོན་དཀར</h3></td>
+								</tr>
+								<tr>
+									<td colspan="2" style="background-color:#f8ffd9;"><h3>嗡　孫巴尼　孫巴　哈拉　渣拉　瑪哈　巴下　瑪如達　阿莫嘎　班札拉　薩埵　梭哈</h3></td>
+									<td style="background-color:#f8ffd9;"  onclick="document.getElementById('simg01').style.display='none';document.getElementById('simg02').style.display='block';document.getElementById('simg002').src='./images/地藏王菩薩00.jpg';"><h3>地藏王菩薩咒&nbsp;ས་ཡི་ལྷ་མོ</h3></td>
+								</tr>
+								<tr>
+									<td colspan="2"><h3>嗡　班札拉薩埵薩瑪訝　瑪努巴拉訝　班札拉薩埵迭諾巴　迭差迭卓美巴哇　蘇多卡又美巴哇　蘇波卡又美巴哇　
+						阿如然多美巴哇　薩哇悉地美札訝渣　薩哇噶瑪蘇札美　吉擋悉利樣咕嚕吽　哈哈哈哈候　班嘎溫　
+						薩哇達塔嘎達　班札拉瑪美木札　班覺拉巴哇　瑪哈薩瑪訝薩埵阿　吽呸</h3></td>
+									<td  onclick="document.getElementById('simg01').style.display='none';document.getElementById('simg02').style.display='block';document.getElementById('simg002').src='./images/金剛薩埵01.jpg';"><h3>金剛薩埵長咒&nbsp;རྡོར་སེམས</h3></td>
+								</tr>
+								<tr>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h3>嗡　班札拉薩埵吽</h3></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"><h2>༄༅།། ༀ་བཛྲ་ས་ཏྭ་ཧཱུྃ །།</h2></td>
+									<td width="33.33%" style="background-color:#f8ffd9;"  onclick="document.getElementById('simg01').style.display='none';document.getElementById('simg02').style.display='block';document.getElementById('simg002').src='./images/金剛薩埵01.jpg';"><h3>金剛薩埵短咒</h3></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>17</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 18 頁 ********** -->
+			<div class="row" id="page_19" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5"><h3>七、蓮師七支祈請文&nbsp;&nbsp;<font style="font-size:40px;">ཚིག་བདུན་གསོལ་འདེབས།</font><font style="font-size:18px;">　(重複唸誦三遍)</font></h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཧཱུྃ༔ ཨོ་རྒྱན་ཡུལ་གྱི་ནུབ་བྱང་མཚམས༔</h2><h3>吽 烏間 油間 努間札</h3><h4>烏金淨土西北角</h4></td>
+									<td align="center" width="33.33%"><h2>པངྨ་གེ་སར་སྡོང་པོ་ལ༔</h2><h3>悲瑪 給埵拉 東播拉</h3><h4>蓮華花莖之蓮上</h4></td>
+									<td align="center" width="33.33%"><h2>ཡ་མཚན་མཆོག་གི་དངོས་གྲུབ་བརྙེས༔</h2><h3>揚陳 丘給 歐堵涅</h3><h4>希有殊勝妙成就</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>པདྨ་འབྱུང་གནས་ཞེས་སུ་གྲགས༔</h2><h3>悲瑪 究涅 些東拉</h3><h4>得大名稱蓮花生</h4></td>
+									<td align="center" width="33.33%"><h2>འཁོར་དུ་མཁའ་འགྲོ་མང་པོས་བསྐོར༔</h2><h3>庫擋 喀卓 芒晡過</h3><h4>空行圍繞於周圍</h4></td>
+									<td align="center" width="33.33%"><h2>ཁྱེད་ཀྱི་རྗེས་སུ་བདག་བསྒྲུབ་ཀྱི༔</h2><h3>切介 皆速 搭 露皆</h3><h4>我如本尊勤修持</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བྱིན་གྱིས་རློབས་ཕྱིར་གཤེགས་སུ་གསོལ༔</h2><h3>形皆 浪皆 謝速梭</h3><h4>祈請降臨賜加持</h4></td>
+									<td align="center" width="33.33%"><h2>གུ་རུ་པདྨ་སིངྔྷི་ཧཱུྃ༔</h2><h3>咕嚕 悲瑪 悉地吽</h3><h4>咕嚕悲瑪悉地吽</h4></td>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>18</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 19 頁 ********** -->
+			<div class="row" id="page_20" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" colspan="3"><h2>༄༅།། ༀ་ཨཱཿཧཱུྃ་བཛྲ་གུ་རུ་པངྨ་སིདྡྷེ་ཧཱུྃ༔  །།</h2><h3>嗡啊吽　班札　咕嚕　悲瑪　悉地吽</h3></td>
+								</tr>
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5;"><h3>八、蓮師如意誦&nbsp;&nbsp;<font style="font-size:40px;">དུས་གསུམ་སངས་རྒུས་མ།</font><font style="font-size:18px;">　(重複唸誦三遍)</font></h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>དུས་གསུམ་སངས་རྒྱས་གུ་རུ་རིན་པོ་ཆེ༔</h2><h3>獨孫 桑間 咕嚕 仁波切</h3><h4>三世佛化蓮花生</h4></td>
+									<td align="center" width="33.33%"><h2>དངོས་གྲུབ་ཀུན་བདག་བདེ་བ་ཆེན་པོའི་ཞབས༔</h2><h3>紐竹 棍檔 爹哇 千波暇</h3><h4>一切大樂成就生</h4></td>
+									<td align="center" width="33.33%"><h2>བར་ཆད་ཀུན་སེལ་བདུད་འདུལ་དྲག་པོ་རྩལ༔</h2><h3>巴傑 棍桑 輪頓 札撥 札</h3><h4>大力伏魔除障礙</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>གསོལ་བ་འདེབས་སོ་བྱིན་གྱིས་བརླབ་ཏུ་གསོལ༔</h2><h3>梭哇 爹梭 新傑洛</h3><h4>殷勤懇切求加持</h4></td>
+									<td align="center" width="33.33%"><h2>ཕྱི་ནང་གསང་བའི་བར་ཆད་ཞི་བ་དང༔</h2><h3>輕浪 搜望 巴切 昔哇檔</h3><h4>消除內外密諸障</h4></td>
+									<td align="center" width="33.33%"><h2>བསམ་པ་ལྷུན་གྱིས་འགྲུབ་བར་བྱིན་གྱིས་རློབས༔</h2><h3>桑巴 倫間 諸巴 經傑洛</h3><h4>如願成就祈加持</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>19</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 20 頁 ********** -->
+			<div class="row" id="page_21" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5;"><h3>九、求生淨土節譯&nbsp;&nbsp;<font style="font-size:40px;">སྨོན་ལམ་བསྡུས་པ་ནི།</font></h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ཨེ་མ་ཧོཿ</h2><h3>噯瑪候</h3></td>
+									<td align="center" width="33.33%"><h2>ངོ་མཚར་སངས་རྒྱས་སྣང་བ་མཐའ་ཡས་དང༔</h2><h3>翁都 桑皆 囔哇 搭耶擋</h3><h4>稀有難得無量光</h4></td>
+									<td align="center" width="33.33%"><h2>གཡས་སུ་ཇོ་བོ་ཐུགས་རྗེ་ཆེན་པོ་དང༔</h2><h3>椰速 糾哦 突傑 千播擋</h3><h4>右有大悲觀世音</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>གཡོན་དུ་སེམས་དཔའ་མཐུ་ཆེན་ཐོབ་རྣམས་ལ༔</h2><h3>詠篤 森爸 突千 拓南拉</h3><h4>左為大力大勢至</h4></td>
+									<td align="center" width="33.33%"><h2>སངས་རྒྱས་བྱང་སེམས་དཔག་མེད་འཁོར་གྱིས་བསྐོར༔</h2><h3>桑皆 強森 爸咩 括及過</h3><h4>無量佛菩薩圍繞</h4></td>
+									<td align="center" width="33.33%"><h2>བདེ་སྐྱིད་ངོ་མཚར་དཔག་ཏུ་མེད་པ་ཡི༔</h2><h3>得給 翁岔 爸度 咩爸宜</h3><h4>但有無量之妙樂</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>བདེ་བ་ཅན་ཞེས་བྱ་བའི་ཞིང་ཁམས་དེར༔</h2><h3>得哇 見些 暇威 形抗得</h3><h4>此即清淨極樂國</h4></td>
+									<td align="center" width="33.33%"><h2>བདག་ནི་འདི་ནས་ཚེ་འཕོས་གྱུར་མཐག༔</h2><h3>達尼 得捏 側蒲 糾瑪踏</h3><h4>願我命終隨即能</h4></td>
+									<td align="center" width="33.33%"><h2>སྐྱེ་བ་གཞན་གྱིས་བར་མ་ཆོད་པརུ༔</h2><h3>介哇 閒及 巴瑪 屈爸汝</h3><h4>不為他生所阻斷</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>20</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 21 頁 ********** -->
+			<div class="row" id="page_22" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>དེ་རུ་སྐྱེས་ནས་སྣང་མཐའི་ཞལ་མཐོང་ཤོག༔</h2><h3>給汝 吉捏 那得 暇通秀</h3><h4>生彼親見彌陀佛</h4></td>
+									<td align="center" width="33.33%"><h2>དེ་སྐད་བདག་གིས་སྨོན་ལམ་བཏབ་པ་འདི༔</h2><h3>得給 達給 萌朗 大爸得</h3><h4>我今如是發願已</h4></td>
+									<td align="center" width="33.33%"><h2>ཕྱོགས་བཅུའི་སངས་རྒྱས་བྱང་སེམས་ཐམས་ཅད་ཀྱིས༔</h2><h3>究久 桑皆 強森 湯建皆</h3><h4>十方諸佛及菩薩</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>གེགས་མེད་འགྲུབ་པར་བྱིན་གྱིས་བརླབ་ཏུ་གསོལ༔</h2><h3>給咩 組爸 建結 臘度梭</h3><h4>加持令無礙成就</h4></td>
+									<td align="center" colspan="2" style="background-color:#ffebb5;"><h2>༄༅།། ཏཏྱ་ཐཱ༔ པཉྩིནྡྲི་ཡ་ཨཱ་ཝ་བོ་ངྷཱ་ན་ཡ་སྭཱ་ཧཱ༔ །།</h2><h3>爹雅他 班雜 得雅 阿哇 波達 那耶 梭哈</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>༄༅། ཕྱོགས་དུས་རྒྱལ་བ་སྲས་བཅས་དགོངས༔</h2><h3>丘頓 佳哇 誰皆供</h3><h4>諸佛菩薩怙念我</h4></td>
+									<td align="center" width="33.33%"><h2>ཚོགས་གཉིས་རྫོགས་ལ་རྗེས་ཡི་རང༔</h2><h3>厝捏 卓拉 皆也浪</h3><h4>資糧圓滿我隨喜</h4></td>
+									<td align="center" width="33.33%"><h2>བདག་གིས་དུས་གསུམ་དགེ་བསགས་པ༔</h2><h3>達給 睹孫 給薩爸</h3><h4>三世所積諸善業</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>21</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 22 頁 ********** -->
+			<div class="row" id="page_23" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>དཀོན་མཆོག་གསུམ་ལ་མཆོད་པ་འབུལ༔</h2><h3>棍秋 孫拉 屈爸鋪</h3><h4>悉以供養三寶尊</h4></td>
+									<td align="center" width="33.33%"><h2>རྒྱལ་བའི་བསྟན་པ་འཕེལ་གྱུར་ཅིག༔</h2><h3>佳威 巔爸 配糾借</h3><h4>願諸佛法普傳揚</h4></td>
+									<td align="center" width="33.33%"><h2>དགེ་བ་སེམས་ཅན་ཀུན་ལ་བསྔོ༔</h2><h3>給哇 森見 棍拉哦</h3><h4>善業迴向眾有情</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>འགྲོ་ཀུན་སངས་རྒྱས་ཐོབ་གྱུར་ཅིག༔</h2><h3>卓棍 桑皆 拓糾計</h3><h4>願諸眾生皆成佛</h4></td>
+									<td align="center" width="33.33%"><h2>དགེ་རྩ་ཐམས་ཅད་གཅིག་བསྡུས་ཏེ༔</h2><h3>給薩 湯傑 計睹得</h3><h4>積聚一切諸善根</h4></td>
+									<td align="center" width="33.33%"><h2>བདག་གི་རྒྱུད་ལ་སྨིན་གྱུར་ཅིག༔</h2><h3>達給 居拉 綿糾計</h3><h4>唯願自心得成熟</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>སྒྲིབ་གཉིས་དག་ནས་ཚོགས་རྫོགས་ཏེ༔</h2><h3>堅尼 達捏 綽卓得</h3><h4>二障清淨資糧圓</h4></td>
+									<td align="center" width="33.33%"><h2>ཚེ་རིང་ནད་མེད་ཉམས་རྟོགས་འཕེལ༔</h2><h3>切烈 尼咩 娘舵悲</h3><h4>長壽無病證悟增</h4></td>
+									<td align="center" width="33.33%"><h2>ཚེ་འདིར་ས་བཅུ་ནོན་གྱུར་ཅིག༔</h2><h3>切諜 薩究 弄糾皆</h3><h4>願我此生登十地</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>22</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 23 頁 ********** -->
+			<div class="row" id="page_24" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td align="center" width="33.33%"><h2>ནམ་ཞིག་ཚེ་འཕོས་གྱུར་མ་ཐག༔</h2><h3>浪些 策晡 糾瑪檔</h3><h4>一旦命終得隨即</h4></td>
+									<td align="center" width="33.33%"><h2>བདེ་བ་ཅན་དུ་སྐྱེ་གྱུར་ཅིག༔</h2><h3>得哇 建獨 介糾結</h3><h4>願能往生極樂國</h4></td>
+									<td align="center" width="33.33%"><h2>སྐྱེས་ནས་པདྨའི་ཁ་བྱེ་སྟེ༔</h2><h3>皆捏 悲咩 喀間得</h3><h4>生已蓮花開放時</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>ལུས་རྟེན་དེ་ལ་སངས་རྒྱས་ཤོག༔</h2><h3>露巔 得拉 桑皆秀</h3><h4>即依彼身願成佛</h4></td>
+									<td align="center" width="33.33%"><h2>བྱང་ཆུབ་ཐོབ་ནས་ཇི་སྲིད་དུ༔</h2><h3>強秋 搭捏 皆西篤</h3><h4>乃至得證菩提果</h4></td>
+									<td align="center" width="33.33%"><h2>སྤྲུལ་པས་འགྲོ་བ་འདྲེན་པར་ཤོག༔</h2><h3>助悲 卓哇 惦罷秀</h3><h4>願以此身度有情</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+									<td align="center" width="33.33%"><h2>　</h2><h3>　</h3><h4>　</h4></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>23</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 24 頁 ********** -->
+			<div class="row" id="page_25" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5;"><h3>十、迴向文</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%" rowspan="2" style="background-color:#fff5d9;"><font style="font-size:42px">合　<img src="images/合掌02.jpg" style="height:90px;">　掌</font></td>
+									<td align="center" width="33.33%"><h2>བསོད་ནམས་འདི་ཡིས་ཐམས་ཅད་གཟིགས་པ་ཉིད།</h2><h3>梭南 得耶 湯傑 昔罷尼</h3><h4>以此功德願證佛自性</h4></td>
+									<td align="center" width="33.33%"><h2>ཐོབ་ནས་ཉེས་པའི་དགྲ་རྣམས་ཕམ་བྱས་ནས།</h2><h3>拓捏 尼悲 渣南 滂傑捏</h3><h4>降伏煩惱怨敵之過患</h4></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h2>སྐྱེ་རྒ་ན་འཆའི་རྦ་རླབས་འཁྲུགས་པ་ཡི།</h2><h3>切嘎 南企 把拉 出罷耶</h3><h4>生老病死洶湧之波濤</h4></td>
+									<td align="center" width="33.33%"><h2>སྲིད་པའི་མཚོ་ལས་འགྲོ་བ་སྒྲོལ་བར་ཤོག།</h2><h3>西悲 綽烈 卓哇 卓哇秀</h3><h4>願度眾生解脫輪迴海</h4></td>
+								</tr>
+								<tr>
+									<td align="center" colspan="3"><h1>功德圓滿</h1></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>24</h1></td>
+					</tr>
+				</table>
+			</div>
+<!-- ********** 封面頁，第 25 頁 ********** -->
+			<div class="row" id="page_26" style="display:none;">
+				<table height="100%" width="95%">
+					<tr>
+						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
+						<td class="column2">
+							<table width="100%">
+								<tr>
+									<td colspan="3" style="background-color:#ffebb5;"><h3>十一、迴向文</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%" rowspan="2" style="background-color:#fff5d9;"><font style="font-size:42px">合　<img src="images/合掌02.jpg" style="height:90px;">　掌</font></td>
+									<td align="center" width="33.33%"><h3>願以我過去、現在、未來一切功德</h3></td>
+									<td align="center" width="33.33%"><h3>回向救護娑婆世界一切生靈</h3></td>
+								</tr>
+								<tr>
+									<td align="center" width="33.33%"><h3>人民安樂、眾生離苦得樂，早聞佛法</h3></td>
+									<td align="center" width="33.33%"><h3>往生西方極樂世界，早證無上菩提</h3></td>
+								</tr>
+								<tr>
+									<td align="center" colspan="3"><h1>功德圓滿</h1></td>
+								</tr>
+							</table>
+						</td>
+						<td class="column3"><h1>25</h1></td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
