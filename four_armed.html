@@ -125,30 +125,31 @@ h6{
 }
 </style>
 <script>
-if(window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', function(event) {
-  //var a = document.getElementById('alpha',
-  //        b = document.getElementById('beta'),
-  //        g = document.getElementById('gamma'),
-  //        alpha = event.alpha,
-  //        beta = event.beta,
-  //            gamma = event.gamma;
-	if(event.gamma == -2){
-		turn_page_upper();
-	}else if(event.gamma == 2){
-		turn_page_down();
-	}else{
-		
-	}
+// 監聽手機陀螺儀
+//if(window.DeviceOrientationEvent) {
+//    window.addEventListener('deviceorientation', function(event) {
+  	//var a = document.getElementById('alpha',
+  	//        b = document.getElementById('beta'),
+  	//        g = document.getElementById('gamma'),
+  	//        alpha = event.alpha,
+  	//        beta = event.beta,
+  	//            gamma = event.gamma;
+//	if(event.gamma == -2){
+//		turn_page_upper();
+//	}else if(event.gamma == 2){
+//		turn_page_down();
+//	}else{
+//		
+//	}
 	
-  //a.innerHTML = Math.round(alpha);
-  //b.innerHTML = Math.round(beta);
-  //g.innerHTML = Math.round(gamma);
+  	//a.innerHTML = Math.round(alpha);
+  	//b.innerHTML = Math.round(beta);
+  	//g.innerHTML = Math.round(gamma);
 
-    }, false);
-}else{
-    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-}
+//    }, false);
+//}else{
+//    document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+//}
 
 // 如果按下按鍵事件時執行程序，電腦版中進行程序
 function isKeyPressed(event){
@@ -221,10 +222,6 @@ function isMouseWheel(event){
 		turn_page_down();
 		
 	}
-}
-
-function isOnClick(event){
-	turn_page_down();
 }
 
 //===============================================================
@@ -322,7 +319,7 @@ function turn_page_down(){
 </script>
 <!--  -->
 </head>
-<body onkeydown="isKeyPressed(event);" onwheel="isMouseWheel(event);" onclick="isOnClick(event);" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+<body onkeydown="isKeyPressed(event);" onwheel="isMouseWheel(event);" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
 <form action="" method="post" name="main_form">
 	<input type="hidden" name="page" value="0">
 </form>
@@ -341,17 +338,21 @@ function turn_page_down(){
 		<td valign="middle" align="center">
 			<div class="row" id="page_0" style="display:block;">
 				<div class="column0" >
-					<table height="100%" width="100%"><tr><td valign="middle">
-						<div class="column00">
-							<font style="font-size:1.5em;">༄༅།།ཐུགས་རྗེ་ཆེན་པོའི་བསྒོམ་བཟླས་འགྲོ་དོན་མཁའ་ཁྱབ་མ་བཞུགས་སོ།།</font><br><br>
-							<font style="font-size:1.2em;">四臂觀音修持儀軌</font>
-						</div>
-					</td></tr></table>
+					<table height="100%" width="100%"><tr><td valign="middle" onclick="turn_page_down();">
+						<tr>
+							<td>
+								<div class="column00">
+									<font style="font-size:1.5em;">༄༅།།ཐུགས་རྗེ་ཆེན་པོའི་བསྒོམ་བཟླས་འགྲོ་དོན་མཁའ་ཁྱབ་མ་བཞུགས་སོ།།</font><br><br>
+									<font style="font-size:1.2em;">四臂觀音修持儀軌</font>
+								</div>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 <!-- ********** 封面頁，第 01 頁 ********** -->
 			<div class="row" id="page_1" style="display:none;">
-				<table height="90%" width="100%" >
+				<table height="90%" width="100%" onclick="turn_page_upper();">
 					<tr>
 						<td>
 							<div class="column0">
@@ -363,7 +364,7 @@ function turn_page_down(){
 			</div>
 <!-- ********** 封面頁，第 01 頁 ********** -->
 			<div class="row" id="page_2" style="display:none;">
-				<table height="100%" width="95%">
+				<table height="100%" width="95%" onclick="turn_page_down();">
 					<tr>
 						<td class="column1"><h3>四<br>臂<br>觀<br>音<br>修<br>持<br>儀<br>軌</h3></td>
 						<td class="column2">
