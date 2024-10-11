@@ -8,7 +8,7 @@ const DisplayModeHandlers = {
     defaultDisplayMode: DISPLAY_MODE.RWD,
   
     pcViewportContent: 'width=1440, initial-scale=1, minimum-scale=0.5',
-    rwdViewportContent: 'width=device-width, initial-scale=1',
+    rwdViewportContent: 'width=device-width, initial-scale=0.5',
 
     buttonContentPC: '切換為RWD版',
     buttonContentRWD: '切換為PC版',
