@@ -125,12 +125,6 @@ h6{
 }
 </style>
 <script>
-window.addEventListener('deviceorientation', function(event) {
-  var alpha = event.alpha;
-  var beta = event.beta;
-  var gamma = event.gamma;
-}, false);
-
 if(window.DeviceOrientationEvent) {
     window.addEventListener('deviceorientation', function(event) {
   //var a = document.getElementById('alpha',
@@ -139,11 +133,14 @@ if(window.DeviceOrientationEvent) {
   //        alpha = event.alpha,
   //        beta = event.beta,
   //            gamma = event.gamma;
-	if(event.gamma < 0){
+	if(event.gamma == -10){
 		turn_page_upper();
-	}else{
+	}else if(event.gamma == 10){
 		turn_page_down();
+	}else{
+		return();
 	}
+	
   //a.innerHTML = Math.round(alpha);
   //b.innerHTML = Math.round(beta);
   //g.innerHTML = Math.round(gamma);
