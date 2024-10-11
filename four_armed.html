@@ -202,7 +202,7 @@ function isOnClick(event){
 	turn_page_down();
 }
 
-function isOndbclick(){
+function isOndbclick(event){
 	turn_page_up();
 }
 //===============================================================
@@ -298,8 +298,9 @@ function turn_page_down(){
 	document.getElementById("simg02").style.display="none";
 }
 </script>
+<!--  -->
 </head>
-<body onkeydown="isKeyPressed(event)" onwheel="isMouseWheel(event);" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+<body onkeydown="isKeyPressed(event);" onwheel="isMouseWheel(event);" onclick="isOnClick(event);" ondbclick="isOndbclick(event);" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
 <form action="" method="post" name="main_form">
 	<input type="hidden" name="page" value="0">
 </form>
