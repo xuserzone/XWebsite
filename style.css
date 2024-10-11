@@ -1,0 +1,15 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.wrapper {
+    padding: 8px;
+    background-color: rgb(141, 235, 251);
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        background-color: #ddd;
+    }
+}
